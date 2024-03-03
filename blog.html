@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blog</title>
+        <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/icons/4e615e20.png" rel="shortcut icon" type="image/gif">
+        <style>
+            .tumblr_text_post {
+                margin-top:20px;
+                background-color: #fff6e1;
+                color: #595959;
+                font-family: Tahoma;
+                font-weight: bold;
+                width: 98%;
+            }
+            
+            .tumblr_post {
+                
+            }
+        </style>
+        
+    </head>
+    <body>
+       
+        
+        <div style="margin:auto; width:710px; margin-top:50px;" class="">
+            <div>
+             <div class="box margia" style="width:700px; height:200px; border: 0px;">
+        
+         
+         <div class="box margia" style="height:150px; width:625px; margin-left:30px; background-color:#ffe6ff; border-color:#ffe6ff;">
+            <img src="/graphics/image05as.jpg" style="width:150px; margin-top:10px; margin-left:10px; margin-right:10px; border: white solid 5px; float:left;">
+           ૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა
+           
+                  
+               
+                  <div id="statuscafe" style="color:#595959; font-family:Tahoma; font-weight: bold;"><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=nineret" defer></script>
+                        <div style="" id="statuscafe-username"></div>
+            </div>
+            <img src="/icons/17622215.gif">You are <k id="view">...</k> Visitor! and this site been update <k id="update">...</k> times!
+         </div>
+         
+         
+         <div class="row" style="margin-top:10px; margin-bottom:10px;">
+        <div style="width:25%" class="button">
+            <a href="/" style="text-decoration:none; color:white;">Home</a>
+        </div>
+        <div style="width:25%" class="button">
+            <a href="/blog.html" style="text-decoration:none; color:white;">Blog</a>
+        </div>
+        <div style="width:25%" class="button">
+            <a href="/extra.html" style="text-decoration:none; color:white;">Extra</a>
+        </div>
+        <div style="width:25%" class="button">
+            <a href="https://nineret.123guestbook.com/" style="text-decoration:none; color:white;">Guestbook</a>
+        </div>
+    </div>
+            
+            
+            
+            
+           <div style="background-color:white; border:dotted #fbd7e8  3px; width:700px;"><script type='text/javascript' src='https://nineret.tumblr.com/js'></script></div></div>
+        </div>
+        
+         <script>
+    
+        let cmdtxt = "";
+
+function append_to_div(div_name, data){
+document.getElementById(div_name).innerText += data;
+}
+
+var site_data = null
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    site_data = JSON.parse(this.responseText);
+     document.getElementById("view").innerHTML = site_data.views.toLocaleString('en-US');
+     document.getElementById("update").innerHTML = site_data.updates.toLocaleString('en-US');
+     var date_obj = new Date(site_data.info.created_at);
+     document.getElementById("created").innerHTML = date_obj.toLocaleString();
+     var date_obj = new Date(site_data.info.last_updated);
+     document.getElementById("update").innerHTML = date_obj.toLocaleString();
+    
+  }
+};
+xhttp.open("GET", "https://nekoweb.org/api/site/info/nineret", true);
+xhttp.send(); 
+    
+        
+    </script>
+        
+    </body>
+</html>
